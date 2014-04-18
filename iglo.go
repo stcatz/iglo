@@ -4,7 +4,7 @@ type API struct {
 	Version        string          `json:"_version"`
 	Name           string          `json:"name"`
 	Description    string          `json:"description"`
-	Metadata       Metadata        `json:"metadata"`
+	Metadata       []Metadata      `json:"metadata"`
 	ResourceGroups []ResourceGroup `json:"resourceGroups"`
 }
 
@@ -28,13 +28,15 @@ type ResourceGroup struct {
 }
 
 type Header struct {
-	Value string `json:"value"`
+	//Value string `json:"value"`
+	Name        string            `json:"name"`
+	Value       string            `json:"value"`
 }
 
 type Model struct {
 	Name        string            `json:"name"`
 	Description string            `json:"description"`
-	Headers     map[string]Header `json:"headers"`
+	Headers     []Header          `json:"headers"`
 	Body        string            `json:"body"`
 	Schema      string            `json:"schema"`
 }
@@ -58,7 +60,7 @@ type Example struct {
 type Request struct {
 	Name        string            `json:"name"`
 	Description string            `json:"description"`
-	Headers     map[string]Header `json:"headers"`
+	Headers     []Header `json:"headers"`
 	Body        string            `json:"body"`
 	Schema      string            `json:"schema"`
 }
@@ -66,7 +68,7 @@ type Request struct {
 type Response struct {
 	Name        string            `json:"name"`
 	Description string            `json:"description"`
-	Headers     map[string]Header `json:"headers"`
+	Headers     []Header `json:"headers"`
 	Body        string            `json:"body"`
 	Schema      string            `json:"schema"`
 }
@@ -75,8 +77,8 @@ type Action struct {
 	Name        string               `json:"name"`
 	Description string               `json:"description"`
 	Method      string               `json:"method"`
-	Parameters  map[string]Parameter `json:"parameters"`
-	Headers     map[string]Header    `json:"headers"`
+	Parameters  []Parameter `json:"parameters"`
+	Headers     []Header    `json:"headers"`
 	Examples    []Example            `json:"examples"`
 }
 
@@ -85,7 +87,7 @@ type Resource struct {
 	Description string               `json:"description"`
 	UriTemplate string               `json:"uriTemplate"`
 	Model       Model                `json:"model"`
-	Parameters  map[string]Parameter `json:"parameters"`
-	Headers     map[string]Header    `json:"headers"`
+	Parameters  []Parameter `json:"parameters"`
+	Headers     []Header    `json:"headers"`
 	Actions     []Action             `json:"actions"`
 }
