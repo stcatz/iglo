@@ -28,17 +28,16 @@ type ResourceGroup struct {
 }
 
 type Header struct {
-	//Value string `json:"value"`
-	Name        string            `json:"name"`
-	Value       string            `json:"value"`
+	Name  string `json:"name"`
+	Value string `json:"value"`
 }
 
 type Model struct {
-	Name        string            `json:"name"`
-	Description string            `json:"description"`
-	Headers     []Header          `json:"headers"`
-	Body        string            `json:"body"`
-	Schema      string            `json:"schema"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
+	Headers     []Header `json:"headers"`
+	Body        string   `json:"body"`
+	Schema      string   `json:"schema"`
 }
 
 type Parameter struct {
@@ -58,36 +57,36 @@ type Example struct {
 }
 
 type Request struct {
-	Name        string            `json:"name"`
-	Description string            `json:"description"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
 	Headers     []Header `json:"headers"`
-	Body        string            `json:"body"`
-	Schema      string            `json:"schema"`
+	Body        string   `json:"body"`
+	Schema      string   `json:"schema"`
 }
 
 type Response struct {
-	Name        string            `json:"name"`
-	Description string            `json:"description"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
 	Headers     []Header `json:"headers"`
-	Body        string            `json:"body"`
-	Schema      string            `json:"schema"`
+	Body        string   `json:"body"`
+	Schema      string   `json:"schema"`
 }
 
 type Action struct {
-	Name        string               `json:"name"`
-	Description string               `json:"description"`
-	Method      string               `json:"method"`
+	Name        string      `json:"name"`
+	Description string      `json:"description"`
+	Method      string      `json:"method"`
 	Parameters  []Parameter `json:"parameters"`
 	Headers     []Header    `json:"headers"`
-	Examples    []Example            `json:"examples"`
+	Examples    []Example   `json:"examples"`
 }
 
 type Resource struct {
-	Name        string               `json:"name"`
-	Description string               `json:"description"`
-	UriTemplate string               `json:"uriTemplate"`
-	Model       Model                `json:"model"`
+	Name        string      `json:"name"`
+	Description string      `json:"description"`
+	UriTemplate string      `json:"uriTemplate"`
+	Model       Model       `json:"model"`
 	Parameters  []Parameter `json:"parameters"`
 	Headers     []Header    `json:"headers"`
-	Actions     []Action             `json:"actions"`
+	Actions     []Action    `json:"actions"`
 }
